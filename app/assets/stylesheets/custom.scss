@@ -15,6 +15,8 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
 section {
@@ -30,6 +32,12 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+}
+
+.btn-primary {
+  background-color: #007bae;
+  border-color: #007bae;
+  border-radius: 0px;
 }
 
 /* typography */
@@ -59,6 +67,26 @@ p {
   line-height: 1.7em;
 }
 
+/*new changes */
+
+.navbar-inverse {
+    background-color: #007bae;
+    border: none;
+}
+
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: grey;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #eee;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+}
 
 /* header */
 
@@ -67,7 +95,6 @@ p {
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
