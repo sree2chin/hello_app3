@@ -40,6 +40,11 @@ textarea {
   border-radius: 0px;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -262,4 +267,11 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/*new css */
+.postTag {
+  background-color: #eee;
+  padding: 3px 5px 3px 5px;
+  border-radius: 5px;
 }

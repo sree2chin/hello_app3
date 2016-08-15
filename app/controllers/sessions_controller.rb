@@ -18,4 +18,9 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_url
   end
+  private 
+    def micropost_params
+      params.require(:micropost).permit(:location)
+    end
+  
 end

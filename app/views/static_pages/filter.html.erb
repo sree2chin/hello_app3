@@ -9,22 +9,12 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <div class = "row">
-        
-        <%= form_for(@micropost, url: filter_path) do |f| %>
-        <div class = "col-md-4">
-          <%= f.select :location, options_for_select([["Karnataka", "karnataka"], ["Andhra Pradesh", "andhraPradesh"], ["others", "others"]]), class: 'form-control' %>
-        </div>
-        <div class = "col-md-4">
-          <%= f.select :typeofpost, options_for_select([["Oldage Homes", "oldageHomes"], ["Orphanage", "orphanage"], ["others", "others"]]), class: 'form-control' %>
-        </div>
-        <div class = "col-md-4">
-          <%= f.submit "Filter", class: "btn btn-primary" %>
-        </div>
-        <% end %>
-      </div>
       <h3>Posts</h3>
-      <%= render 'shared/feed' %>
+      <% if @feed_items.any? %>
+        <ol class="microposts">
+          <%= render @feed_items %>
+        </ol>
+      <% end %>
     </div>
   </div>
 <% else %>
@@ -38,7 +28,6 @@
       </section>
     </aside>
     <div class="col-md-8">
-     
       <h3>Posts</h3>
       <%= render 'shared/feed' %>
     </div>
