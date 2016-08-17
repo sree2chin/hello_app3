@@ -1,7 +1,7 @@
 <%= form_for(@micropost) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Post something useful..." %>
+    
     <div class = "row">
       <div class = "col-md-4">
         Location:
@@ -19,5 +19,6 @@
       </div>
     </div>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.text_area :content, placeholder: "Post something useful..." %>
+  <%= f.submit "Post", class: "btn btn-primary wtPostButton" %>
 <% end %>

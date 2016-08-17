@@ -1,35 +1,44 @@
 <% if logged_in? %>
+  
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-3 watslifeLeftBox">
+      
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <div class = "row">
+      <section>
+        <div class = "row">
         
         <%= form_for(@micropost, url: filter_path) do |f| %>
-        <div class = "col-md-4">
-          <%= f.select :location, options_for_select([["Karnataka", "karnataka"], ["Andhra Pradesh", "andhraPradesh"], ["others", "others"]]), class: 'form-control' %>
-        </div>
-        <div class = "col-md-4">
-          <%= f.select :typeofpost, options_for_select([["Oldage Homes", "oldageHomes"], ["Orphanage", "orphanage"], ["others", "others"]]), class: 'form-control' %>
-        </div>
-        <div class = "col-md-4">
-          <%= f.submit "Filter", class: "btn btn-primary" %>
-        </div>
+          <div class = "col-md-12">
+            <%= f.select :location, options_for_select([["Karnataka", "karnataka"], ["Andhra Pradesh", "andhraPradesh"], ["others", "others"]]), :class => "form-control" %>
+          </div>
+          <div class = "col-md-12">
+            <%= f.select :typeofpost, options_for_select([["Oldage Homes", "oldageHomes"], ["Orphanage", "orphanage"], ["others", "others"]]), class: 'form-control' %>
+          </div>
+          <div class = "col-md-12">
+            <%= f.submit "Filter", class: "btn btn-primary" %>
+          </div>
         <% end %>
       </div>
+      </section>
+    
+    </aside>
+
+    <div class="col-md-7">
+      <div class = "row">
+        <section class="micropost_form">
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </div>
+      
       <h3>Posts</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
   <div class="row">
-    <aside class="col-md-4">
+    <aside class="col-md-3">
       <section class="user_info">
         Categories
       </section>
@@ -37,7 +46,7 @@
         Please log in to post <li><%= link_to "Log in", login_path %></li>
       </section>
     </aside>
-    <div class="col-md-8">
+    <div class="col-md-7">
      
       <h3>Posts</h3>
       <%= render 'shared/feed' %>
