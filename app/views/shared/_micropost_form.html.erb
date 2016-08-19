@@ -7,7 +7,14 @@
         Location:
       </div>
       <div class = "col-md-8">
-        <%= f.select :location, options_for_select([["Karnataka", "karnataka"], ["Andhra Pradesh", "andhraPradesh"], ["others", "others"]]), class: 'form-control' %>
+        <select name="micropost[location]" 
+                id="micropost_location"
+                class = "form-control">
+          <option value="karnataka">Karnataka</option>
+          <option value="andhraPradesh">Andhra Pradesh</option>
+          <option value="others">others</option>
+        </select>
+        <% #f.select :location, options_for_select([["Karnataka", "karnataka"], ["Andhra Pradesh", "andhraPradesh"], ["others", "others"]]), class: 'form-control' %>
       </div>
     </div>
     <div class = "row">
@@ -15,7 +22,14 @@
         Type of post:
       </div>
       <div class = "col-md-8">
-        <%= f.select :typeofpost, options_for_select([["Oldage Homes", "oldageHomes"], ["Orphanage", "orphanage"], ["others", "others"]]), class: 'form-control' %>
+        <select name="micropost[typeofpost]" 
+                id="micropost_typeofpost"
+                class = "form-control">
+          <option value="oldageHomes">Oldage Homes</option>
+          <option value="orphanage">Orphanage</option>
+          <option value="others">others</option>
+        </select>
+        <% #f.select :typeofpost, options_for_select([["Oldage Homes", "oldageHomes"], ["Orphanage", "orphanage"], ["others", "others"]]), class: 'form-control' %>
       </div>
     </div>
   </div>
