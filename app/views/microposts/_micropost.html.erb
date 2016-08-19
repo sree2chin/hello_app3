@@ -1,10 +1,11 @@
 <li id="<%= micropost.id %>">
+  
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span style = "margin-left: 40px;"><small>tags:</small></span>
-  <span class = "postTag"><%= micropost.location %></span>
-  <span class = "postTag"><%= micropost.typeofpost %></span>
-  <span class="content"><%= micropost.content %></span>
+  <span class = "postTag floatRight"><%= micropost.typeofpost %></span>
+  <span class = "postTag floatRight"><%= micropost.location %></span>
+  
+  <span style = "margin-left: 40px; float: right;">tags:</span>
 
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
@@ -14,4 +15,5 @@
 
     <% end %>
   </span>
+  <div><span class="content"><%= micropost.content %></span></div>
 </li>
